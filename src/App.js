@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { BandList } from "components/BandList";
 import { io } from "socket.io-client";
 
@@ -33,8 +33,22 @@ function App() {
     });
   }, [socket]);
 
+  const newTopic = useRef();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    socket.emit("create-band", {
+      name: newTopic.current.value,
+    });
+    newTopic.current.value = "";
+  };
+
   return (
-    <div>
+    <div style={{ backgroundColor: "#E4E9F5" }}>
+      <form onSubmit={handleSubmit}>
+        <input type="text" ref={newTopic} />
+        <button type="submit">Create Topic</button>
+      </form>
       {online ? (
         <h1 style={{ color: "green" }}>Connected</h1>
       ) : (
