@@ -1,9 +1,13 @@
 import React from "react";
+import { Container, UpVote, NameInput, Votes, Delete } from "./styles.js";
 
-export const Band = () => {
+export const Band = ({ id, name, votes }) => {
   return (
-    <div>
-      <h1>Band</h1>
-    </div>
+    <Container>
+      <UpVote>+1</UpVote>
+      <NameInput defaultValue={name} />
+      <Votes>{votes}</Votes>
+      <Delete>Delete</Delete>
+    </Container>
   );
 };

@@ -15,19 +15,14 @@ function App() {
   const [bandList, setBandList] = useState([]);
 
   useEffect(() => {
-    setOnline(true);
-  }, [socket]);
-
-  useEffect(() => {
     socket.on("connect", (data) => {
-      console.log(data);
+      console.log("client connected");
       setOnline(true);
     });
   }, [socket]);
 
   useEffect(() => {
     socket.on("disconnect", (data) => {
-      console.log(data);
       setOnline(false);
     });
   }, [socket]);
@@ -35,6 +30,7 @@ function App() {
   useEffect(() => {
     socket.on("current-bands", (bands) => {
       setBandList(bands);
+      console.log(bands);
     });
   }, [socket]);
 
