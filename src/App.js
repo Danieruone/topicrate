@@ -10,19 +10,19 @@ const connectSocketServer = () => {
 };
 
 function App() {
-  const [socket, setSocket] = useState(connectSocketServer());
+  const [socket] = useState(connectSocketServer());
   const [online, setOnline] = useState(false);
   const [bandList, setBandList] = useState([]);
 
   useEffect(() => {
-    socket.on("connect", (data) => {
+    socket.on("connect", () => {
       console.log("client connected");
       setOnline(true);
     });
   }, [socket]);
 
   useEffect(() => {
-    socket.on("disconnect", (data) => {
+    socket.on("disconnect", () => {
       setOnline(false);
     });
   }, [socket]);
@@ -30,7 +30,6 @@ function App() {
   useEffect(() => {
     socket.on("current-bands", (bands) => {
       setBandList(bands);
-      console.log(bands);
     });
   }, [socket]);
 
@@ -41,7 +40,7 @@ function App() {
       ) : (
         <h1 style={{ color: "red" }}>Disconnected</h1>
       )}
-      <BandList bandList={bandList} />
+      <BandList bandList={bandList} setBandList={setBandList} socket={socket} />
     </div>
   );
 }
