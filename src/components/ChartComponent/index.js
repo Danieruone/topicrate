@@ -10,6 +10,7 @@ export const Container = Styled.div`
   background-color: white;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 20px;
   border-radius: 10px;
   max-height: 500px;
@@ -58,14 +59,27 @@ export const ChartComponent = () => {
     },
   ];
 
+  const pieSeries = data.bandVotes;
+  const pieOptions = {
+    labels: data.bandNames,
+  };
+
   return (
     <Container>
       <Chart
         options={options}
         series={series}
         type="bar"
-        width={600}
-        height={500}
+        width={300}
+        height={400}
+      />
+
+      <Chart
+        options={pieOptions}
+        series={pieSeries}
+        type="donut"
+        width={400}
+        height={400}
       />
     </Container>
   );
