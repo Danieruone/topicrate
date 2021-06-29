@@ -1,6 +1,7 @@
-import { useState, useRef, useContext } from "react";
+import React, { useState, useRef, useContext } from "react";
 // components
 import { BandList } from "components/BandList";
+import { ChartComponent } from "components/ChartComponent";
 // context
 import { SocketContext } from "context/SocketContext";
 
@@ -30,6 +31,7 @@ export const HomePage = () => {
         <h1 style={{ color: "red" }}>Disconnected</h1>
       )}
       <BandList bandList={bandList} setBandList={setBandList} socket={socket} />
+      <ChartComponent />
     </div>
   );
 };
