@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useEffect, useContext, useState } from "react";
 import { Band } from "components/Band";
+// context
+import { SocketContext } from "context/SocketContext";
 
-export const BandList = ({ bandList, socket, setBandList }) => {
+export const BandList = () => {
+  const [bandList, setBandList] = useState([]);
+
+  const { socket } = useContext(SocketContext);
+
+  useEffect(() => {
+    socket.on("current-bands", (bands) => {
+      setBandList(bands);
+    });
+  }, [socket]);
+
   return (
     <div>
       {bandList.map((band) => {
