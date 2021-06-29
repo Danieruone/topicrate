@@ -3,6 +3,16 @@ import { Band } from "components/Band";
 // context
 import { SocketContext } from "context/SocketContext";
 
+import Styled from "styled-components";
+
+export const Container = Styled.div`
+  background-color: white;
+  width: 30%;
+  padding: 20px 20px 20px 20px;
+  border-radius: 10px;
+
+`;
+
 export const BandList = () => {
   const [bandList, setBandList] = useState([]);
 
@@ -15,7 +25,7 @@ export const BandList = () => {
   }, [socket]);
 
   return (
-    <div>
+    <Container>
       {bandList.map((band) => {
         return (
           <Band
@@ -26,6 +36,6 @@ export const BandList = () => {
           />
         );
       })}
-    </div>
+    </Container>
   );
 };
