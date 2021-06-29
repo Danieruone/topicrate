@@ -4,7 +4,7 @@ import { SocketProvider } from "./context/SocketContext";
 function App() {
   return (
     <SocketProvider>
-      <HomePage />;
+      <HomePage />
     </SocketProvider>
   );
 }

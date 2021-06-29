@@ -2,6 +2,18 @@ import React, { useContext, useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 // context
 import { SocketContext } from "context/SocketContext";
+// styles
+import Styled from "styled-components";
+
+export const Container = Styled.div`
+  width: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 10px;
+  max-height: 500px;
+`;
 
 export const ChartComponent = () => {
   const { socket } = useContext(SocketContext);
@@ -47,12 +59,14 @@ export const ChartComponent = () => {
   ];
 
   return (
-    <Chart
-      options={options}
-      series={series}
-      type="bar"
-      width={300}
-      height={300}
-    />
+    <Container>
+      <Chart
+        options={options}
+        series={series}
+        type="bar"
+        width={600}
+        height={500}
+      />
+    </Container>
   );
 };

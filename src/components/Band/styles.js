@@ -2,13 +2,18 @@ import Styled from "styled-components";
 
 export const Container = Styled.div`
   display: flex;
-  justify-content: start;
-  padding: 10px;
+  justify-content: center;
+  width: 100%;
+  border-bottom: solid .1px rgb(233, 236, 239);
+  padding: 10px 0 10px 0;
   & > *{
     margin: 10px;
   }
   & button{
     border: none;
+  }
+  &:last-child{
+    border-bottom: none;
   }
 `;
 
@@ -16,7 +21,7 @@ export const UpVote = Styled.button`
   background-color: #2892F5;
   padding: 10px;
   color: white;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
 `;
 
@@ -29,12 +34,14 @@ export const NameInput = Styled.input`
 export const Votes = Styled.p`
   display: flex;
   align-items:center;
+  justify-content: center;
+  width: 30px;
 `;
 
 export const Delete = Styled.button`
   background-color: #F52233;
   padding: 10px;
   color: white;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
 `;
