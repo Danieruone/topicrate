@@ -13,6 +13,8 @@ export const Container = Styled.form`
     border-radius: 5px;
     & h1{
         margin: 0px 0px 20px 0px;
+        font-size: 25px;
+        font-weight: 100;
     }
     & input{
         border-radius: 5px;
@@ -29,4 +31,17 @@ export const Container = Styled.form`
         cursor: pointer;
         margin-left: 10px;
     }
+    @media (max-width: 600px) {
+        & h1 {
+            margin: 30px 0px 20px 0px;
+            font-size: 15px;
+        }
+        & input{
+            border-radius: 5px;
+            border: none;
+            padding: 12px;
+            width: 50%;
+            font-size: 10px;
+        }
+    } 
 `;

@@ -7,7 +7,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #151a30;
   height: 100vh;
-  padding: 50px;
+  padding: 20px 50px 0px 50px;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 20px 10px 0px 10px;
+  }
 }
 
 code {

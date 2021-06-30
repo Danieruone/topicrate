@@ -8,9 +8,13 @@ import { ConnectedAlert } from "components/ConnectedAlert";
 import Styled from "styled-components";
 
 export const Container = Styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 69%;
+  grid-column-gap: 1%;
+  @media (max-width: 1200px) {
+    grid-template-columns: 100%;
+    grid-row-gap: 1%;
+  } 
 `;
 
 export const HomePage = () => {

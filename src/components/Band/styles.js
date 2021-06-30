@@ -26,10 +26,10 @@ export const UpVote = Styled.button`
 `;
 
 export const NameInput = Styled.input`
-  border-radius: 8px;
+  border-radius: 5px;
   padding: 5px;
-  border: solid .1px gray;
-  width: 50%;
+  border:  none;
+  min-width: 40%;
   color: gray;
 `;
 
