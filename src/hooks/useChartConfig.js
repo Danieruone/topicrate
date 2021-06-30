@@ -29,30 +29,28 @@ export const useChartConfig = () => {
     });
   }, [bandList]);
 
-  const options = {
-    chart: {
-      id: "votes-chart",
+  const config = {
+    barOptions: {
+      chart: {
+        id: "votes-chart",
+      },
+      xaxis: {
+        categories: data.bandNames,
+      },
     },
-    xaxis: {
-      categories: data.bandNames,
+    barSeries: [
+      {
+        name: "series-1",
+        data: data.bandVotes,
+      },
+    ],
+    pieOptions: {
+      labels: data.bandNames,
     },
+    pieSeries: data.bandVotes,
   };
 
-  const series = [
-    {
-      name: "series-1",
-      data: data.bandVotes,
-    },
-  ];
-
-  const pieSeries = data.bandVotes;
-  const pieOptions = {
-    labels: data.bandNames,
-  };
   return {
-    options,
-    series,
-    pieSeries,
-    pieOptions,
+    config,
   };
 };
