@@ -4,7 +4,6 @@ export const Container = Styled.div`
   display: grid;
   grid-template-columns: 49.5% 49.5%;
   grid-column-gap: 1%;
-  padding: 0px;
   height: 75vh;
   margin-bottom: 50px;
   & span{
