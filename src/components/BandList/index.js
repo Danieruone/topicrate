@@ -6,11 +6,11 @@ import { SocketContext } from "context/SocketContext";
 import Styled from "styled-components";
 
 export const Container = Styled.div`
-  background-color: white;
-  width: 30%;
+  background-color: #222B45;
+  width: 40%;
   padding: 20px 20px 20px 20px;
   border-radius: 10px;
-
+  color: white;
 `;
 
 export const BandList = () => {
