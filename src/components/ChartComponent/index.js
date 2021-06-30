@@ -16,21 +16,21 @@ export const Container = Styled.div`
 `;
 
 export const ChartComponent = () => {
-  const { options, series, pieOptions, pieSeries } = useChartConfig();
+  const { config } = useChartConfig();
 
   return (
     <Container>
       <Chart
-        options={options}
-        series={series}
+        options={config.barOptions}
+        series={config.barSeries}
         type="bar"
         width={500}
         height={400}
       />
 
       <Chart
-        options={pieOptions}
-        series={pieSeries}
+        options={config.pieOptions}
+        series={config.pieSeries}
         type="donut"
         width={400}
         height={400}

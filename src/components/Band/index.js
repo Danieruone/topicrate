@@ -1,38 +1,13 @@
 import React from "react";
+import { useBandCrud } from "hooks/useBandCrud.js";
 import { Container, UpVote, NameInput, Votes, Delete } from "./styles.js";
 
-export const Band = ({ band, socket, setBandList }) => {
-  const increaseVotes = () => {
-    socket.emit("vote-band", {
-      id: band.id,
-    });
-  };
-
-  const onChange = (e) => {
-    const newName = e.target.value;
-    setBandList((bands) =>
-      bands.map((currentBand) => {
-        if (currentBand.id === band.id) {
-          currentBand.name = newName;
-        }
-        return currentBand;
-      })
-    );
-  };
-
-  const handleBlur = (e) => {
-    const newName = e.target.value;
-    socket.emit("change-band-name", {
-      id: band.id,
-      newName,
-    });
-  };
-
-  const deleteBand = () => {
-    socket.emit("delete-band", {
-      id: band.id,
-    });
-  };
+export const Band = ({ band, setBandList, socket }) => {
+  const [increaseVotes, onChange, handleBlur, deleteBand] = useBandCrud(
+    band,
+    setBandList,
+    socket
+  );
 
   return (
     <Container>
