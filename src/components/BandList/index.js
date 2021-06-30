@@ -7,11 +7,10 @@ import Styled from "styled-components";
 
 export const Container = Styled.div`
   background-color: #222B45;
-  padding: 20px;
   border-radius: 5px;
   color: white;
   overflow-y: scroll;
-  height: 550px;
+  height: 75vh;
   @media (max-width: 600px) {
     height: 300px;
   } 

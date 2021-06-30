@@ -41,7 +41,7 @@ export const Container = Styled.form`
             border: none;
             padding: 12px;
             width: 50%;
-            font-size: 10px;
+            font-size: 11px;
         }
     } 
 `;

@@ -4,7 +4,7 @@ export const Container = Styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  border-bottom: solid .1px rgb(233, 236, 239);
+  border-bottom: solid .1px gray;
   padding: 10px 0 10px 0;
   & > *{
     margin: 10px;
