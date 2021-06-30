@@ -10,7 +10,8 @@ const Container = Styled.div`
     align-items: center;
     color: gray;
     padding: 20px;
-    top: 30px;
+    top: 0px;
+    font-size: 12px;
     & div{
         width: 10px;
         height: 10px;
