@@ -18,7 +18,7 @@ export const Container = Styled.div`
 `;
 
 export const UpVote = Styled.button`
-  background-color: #2892F5;
+  background-color: #3366FF;
   padding: 10px;
   color: white;
   border-radius: 5px;
@@ -29,6 +29,8 @@ export const NameInput = Styled.input`
   border-radius: 8px;
   padding: 5px;
   border: solid .1px gray;
+  width: 50%;
+  color: gray;
 `;
 
 export const Votes = Styled.p`
@@ -39,7 +41,7 @@ export const Votes = Styled.p`
 `;
 
 export const Delete = Styled.button`
-  background-color: #F52233;
+  background-color: #FF4073;
   padding: 10px;
   color: white;
   border-radius: 5px;

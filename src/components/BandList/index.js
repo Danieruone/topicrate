@@ -6,11 +6,11 @@ import { SocketContext } from "context/SocketContext";
 import Styled from "styled-components";
 
 export const Container = Styled.div`
-  background-color: white;
+  background-color: #222B45;
   width: 30%;
   padding: 20px 20px 20px 20px;
   border-radius: 10px;
-
+  color: white;
 `;
 
 export const BandList = () => {
@@ -26,16 +26,22 @@ export const BandList = () => {
 
   return (
     <Container>
-      {bandList.map((band) => {
-        return (
-          <Band
-            key={band.id}
-            socket={socket}
-            setBandList={setBandList}
-            band={band}
-          />
-        );
-      })}
+      {bandList.length === 0 ? (
+        <p style={{ color: "gray", display: "flex", justifyContent: "center" }}>
+          Add your topic
+        </p>
+      ) : (
+        bandList.map((band) => {
+          return (
+            <Band
+              key={band.id}
+              socket={socket}
+              setBandList={setBandList}
+              band={band}
+            />
+          );
+        })
+      )}
     </Container>
   );
 };
