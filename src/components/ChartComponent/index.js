@@ -6,10 +6,10 @@ import { SocketContext } from "context/SocketContext";
 import Styled from "styled-components";
 
 export const Container = Styled.div`
-  width: 50%;
+  width: 63%;
   background-color: #222B45;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   padding: 20px;
   border-radius: 10px;
@@ -70,7 +70,7 @@ export const ChartComponent = () => {
         options={options}
         series={series}
         type="bar"
-        width={300}
+        width={500}
         height={400}
       />
 

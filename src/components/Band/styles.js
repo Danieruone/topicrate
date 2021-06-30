@@ -29,6 +29,8 @@ export const NameInput = Styled.input`
   border-radius: 8px;
   padding: 5px;
   border: solid .1px gray;
+  width: 50%;
+  color: gray;
 `;
 
 export const Votes = Styled.p`

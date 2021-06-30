@@ -21,7 +21,11 @@ export const AddBand = () => {
     <Container onSubmit={handleSubmit}>
       <h1>Add your topic</h1>
       <div>
-        <input type="text" placeholder="Add your band here..." ref={newTopic} />
+        <input
+          type="text"
+          placeholder="For example a music group..."
+          ref={newTopic}
+        />
         <button type="submit">Create Topic</button>
       </div>
     </Container>

@@ -8,8 +8,8 @@ export const Container = Styled.form`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px 0px 20px 0px;
-    margin-bottom: 50px;
+    padding: 20px 0px 40px 0px;
+    margin-bottom: 20px;
     border-radius: 5px;
     & h1{
         margin: 0px 0px 20px 0px;

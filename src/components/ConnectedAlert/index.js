@@ -9,7 +9,7 @@ const Container = Styled.div`
     display: flex;
     align-items: center;
     color: gray;
-    padding: 10px;
+    padding: 20px;
     top: 30px;
     & div{
         width: 10px;
